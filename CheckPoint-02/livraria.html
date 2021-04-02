@@ -1,0 +1,75 @@
+<!DOCTYPE html> <!-- Abertura código HTML -->
+<html lang="pt-br"> <!-- Linguagem da página-->
+<head> <!-- Abertura do cabeçalho -->
+    <meta charset="UTF-8"> <!-- Código de linguagem -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Área de renderização-->
+    <title>Check Point 02 - Lucas Lima Gimenez</title> <!-- Titulo da página-->
+    <!-- link para o BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+     <!-- link para o CSS -->
+     <link rel="stylesheet" href="./css/style.css">
+</head> <!-- Fechamento do cabeçalho -->
+<body> <!-- Abertura do corpo da página -->
+
+    <header class="bg-danger pt-5"> <!-- cabeçalho da página-->
+        <h1 class="display-4 text-light text-center">Checkpoint - 02</h1> 
+        <p class="text-right text-light display-5">Lucas Lima Gimenez</p>
+    </header> <!-- fechamento cabeçalho da página-->
+
+     <main class="distancia"> <!--Parte principal da página-->
+         <section class="bg-dark mt-5 text-light"> <!-- sessão para requerimento de informações do usuário-->
+            <form> <!-- Abertura do formulário -->
+                <div class="header bg-danger text-center"> <!-- cabeçalho do formulário-->
+                    <h1>Livraria HTML/JS</h1>
+                </div>
+                <h3 class="text-center pb-2">Favor preencher os campos abaixo:</h3>
+
+            <!--Todos possuindo required para ser obrigatório para o usuário responder-->
+
+                <label for="livro" class="distanciamento">Nome do Livro : </label> <!--label para linkar com o input ao clicá-lo -->
+                <!-- autofocus para iniciar a página com foco nesse input-->
+                <p><input type="text" id="livro" placeholder="Exemplo : A Divina Comédia" autofocus required class="dados livro"></p> <!-- input referente ao nome do livro-->
+
+                <label for="preco" class="distanciamento">Preço do Livro : </label> 
+
+                <p><input type="number" id="preco" placeholder="100,00" required class="dados preco"></p> <!-- input referente ao preco do livro-->
+
+                <label for="cliente" class="distanciamento">Selecione o desconto : </label>
+                <p>
+                    <select class="dados tipo-mensagem" id="cliente" required> <!-- select responsavel por dar a possibilidade do usuário escolher dentre as opções -->
+                        <option value="Nenhum">Nenhum</option>
+                        <option value="Cliente A">Cliente A</option>
+                        <option value="Cliente B">Cliente B</option>
+                        <option value="Cliente C">Cliente C</option>
+                    </select>
+                </p>
+                <p><button type="submit" class="enviar bg-danger text-light" onclick=Calcular() >Efetuar Pagamento</button></p> <!-- botão do formulário que chamará a função calcular() quando o usuário clicar-->
+            </form> <!-- fechamento do formulário -->
+         </section> <!-- fechamento da sessão-->
+
+         <section class="bg-dark mt-5 text-light"> <!-- sessão responsável pelo recibo utilizando as informações da sessão acima-->
+            <div id="recibo">
+                <div class="header bg-danger text-center">
+                    <h1>Livraria HTML/JS</h1>
+                </div>
+                <h3 class="text-center pb-2">Recibo do Pagamento</h3>
+                <section class="aumento"> <!--responsável por aumentar a letra de cada label-->
+                <!-- labels que receberão as informações do JavaScript-->
+                <label id ="nomeLivro"></label></br>
+                <label id ="precoLivro"></label></br>
+                <label id ="tipoDesconto"></label> <label id ="valorDesconto"></label></br>
+                <label id ="totalLivro"></label>
+                </section>
+            </div>
+         </section> <!-- fechamento da sessão de recibo -->
+     </main> <!--fechamento parte principal da página-->
+
+        
+
+     <!-- Link do JAVASCRIPT -->
+    <script src="./js/livraria.js"></script>
+
+</body> <!-- Fechamento do corpo da página -->
+</html> <!-- Fechamento código HTML -->
